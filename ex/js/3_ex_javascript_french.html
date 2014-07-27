@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+
+  <script>
+
+  //------------------------------------------------------------------------------
+  // begin simple_i18n functions
+  //------------------------------------------------------------------------------
+
+  // put dictionnaries here
+  var translation_fr={
+    "yes": "oui",
+    "no": "non",
+    "Result: ": "Résultat : ",
+  }
+
+
+  var translations={
+    // update list of translations here, example:   "fr":translation_fr,
+    "fr":translation_fr,
+  };
+
+  //choose the translation here
+  var current_translation="fr";
+
+  function _(key)
+  {
+    if (current_translation in translations)
+      if (key in translations[current_translation])
+        return translations[current_translation][key]
+    return key;
+  }
+  //------------------------------------------------------------------------------
+  // end simple_i18n functions
+  //------------------------------------------------------------------------------
+
+
+
+  function make_something() {
+    var bool={true:_("yes"),false:_("no")};
+  
+    alert(_('Result: ')+bool[true]);
+  }
+  </script>
+ 
+</head>
+
+
+<body onload="make_something();">
+
+</body>
+</html>

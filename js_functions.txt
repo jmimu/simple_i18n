@@ -1,0 +1,24 @@
+  //------------------------------------------------------------------------------
+  // begin simple_i18n functions
+  //------------------------------------------------------------------------------
+
+  // put dictionnaries here
+
+
+  var translations={
+    // update list of translations here, example:   "fr":translation_fr,
+  };
+
+  //choose the translation here
+  var current_translation="??";
+
+  function _(key)
+  {
+    if (current_translation in translations)
+      if (key in translations[current_translation])
+        return translations[current_translation][key]
+    return key;
+  }
+  //------------------------------------------------------------------------------
+  // end simple_i18n functions
+  //------------------------------------------------------------------------------
