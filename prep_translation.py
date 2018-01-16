@@ -37,8 +37,10 @@ for line in datafile:
 datafile.seek(0)
 all_keys=[]
 for line in datafile:
-  if (re.match('.*_\( *[\'"]([^\'"]+)[\'"] *\).*', line)) :
-    all_keys+=re.findall('_\( *[\'"]([^\'"]+)[\'"] *\)', line)
+  if (re.match('.*_\( *["]([^"]+)["] *\).*', line)) :
+    all_keys+=re.findall('_\( *["]([^"]+)["] *\)', line)
+  if (re.match('.*_\( *[\']([^\']+)[\'] *\).*', line)) :
+    all_keys+=re.findall('_\( *[\']([^\']+)[\'] *\)', line)
 all_keys_unique=[]
 [all_keys_unique.append(x) for x in all_keys if x not in all_keys_unique]
 
